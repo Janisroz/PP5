@@ -32,7 +32,9 @@
         <title>Train-Up {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
-        <header class="container-fluid fixed-top"></header>
+        <header class="container-fluid fixed-top">
+            {% include 'includes/nav.html' %}
+        </header>
         {% if messages %}
         <div class="mesage-container"></div>
         {% endif %}
