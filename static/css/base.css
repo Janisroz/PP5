@@ -1,0 +1,26 @@
+* {
+    background:#F8FAF8;
+    font-family: Sarabun, sans-serif;
+    color: #1B1A19;
+    --bs-navbar-toggler-border-color:#1B1A19;
+}
+
+
+
+.nav-link,
+.dropdown-item {
+    font-family: Anton, sans-serif ;
+    font-size: larger;
+}
+
+.dropdown-menu {
+    background-color: #F8FAF8;
+    border-color: #1B1A19;
+}
+
+hr {
+    margin: auto;
+    color: #202123;
+    opacity: 1;
+    border-top: calc(1px + 0.125em) solid;
+}
