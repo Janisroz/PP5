@@ -1,3 +1,4 @@
+/* Main Setup */
 * {
     background:#F8FAF8;
     font-family: Sarabun, sans-serif;
@@ -5,8 +6,33 @@
     --bs-navbar-toggler-border-color:#1B1A19;
 }
 
+/* General Rules */
+.text-upper {
+    text-transform: uppercase;
+}
 
+.bg-transparent {
+    background: transparent;
+}
 
+.secondary-font-color {
+    color: #F8FAF8;
+}
+
+.btn-primary {
+    background-color: #FA9E05;
+    border-color: #FA9E05;
+}
+
+.btn-secondary {
+    background-color: #486C79;
+    border-color: #486C79;
+}
+
+/* Nav Bar */
+header {
+    height: 60px;
+}
 .nav-link,
 .dropdown-item {
     font-family: Anton, sans-serif ;
@@ -23,4 +49,24 @@ hr {
     color: #202123;
     opacity: 1;
     border-top: calc(1px + 0.125em) solid;
+}
+
+/* Index page */
+#home-bg {
+    height: calc(100vh - 60px);
+    background: url('/media/gloves-dumbbells.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#home-bg > div {
+    margin-top: 5rem;
+}
+
+#change-head {
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+#shop-now-btn {
+    font-size: 1.75rem;
 }
