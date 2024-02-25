@@ -29,6 +29,19 @@
     border-color: #486C79;
 }
 
+h1 {
+    font-family: "Anton", sans-serif;
+}
+
+strong {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.img-border {
+    border:2px solid #1B1A19 ;
+}
+
 /* Nav Bar */
 header {
     height: 60px;
@@ -69,4 +82,10 @@ hr {
 
 #shop-now-btn {
     font-size: 1.75rem;
+}
+
+/* About Us page */
+
+#about-us-banner {
+    background-color: #202123;
 }

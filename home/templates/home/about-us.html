@@ -1,5 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
+<div class="container-fluid">
+    <div class="row flex-lg-row-reverse  py-2 justify-content-center align-items-center">
+        <div class="col col-sm-8 col-lg-6">
+            <img src="/media/workout-equipment.jpg" class="mx-lg-auto d-block img-fluid img-border" alt="Bootstrap Themes"
+                width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-5 mt-2 mt-md-0">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center py-2">About Us</h1>
+            <p class="lead">
+                Train-up was created with the normal person in mind. We know you are not looking to chagne the world. We
+                understand that you are trying to change <strong>your</strong> world. That is why we created train up. 
+                <br>
+                With Train-up you can buy your equipment, see how to use it and get inspired to train. so what are you waiting for?
+                Sign-up below, shop now or check out our coaches profiles to see who you are learning from.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <div class="col-12 bg-transparent text-center">
+                    <a href="#" class="bg-transparent">
+                        <button type="button" class="btn btn-primary btn-lg">Shop Now</button>
+                    </a>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-center py-1">
+                <div class="col-4 bg-transparent text-center">
+                    <a href="{% url 'account_signup' %}" class="bg-transparent">
+                        <button type="button" class="btn btn-secondary btn-md">Register</button>
+                    </a>
+                </div>
+                <div class="col-4 bg-transparent text-center">
+                    <a href="#" class="bg-transparent">
+                        <button type="button" class="btn btn-secondary btn-md" >Coaches</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
