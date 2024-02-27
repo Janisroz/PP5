@@ -3,34 +3,36 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        {% for product in products %}
-        <div class="col col-sm-6 col-lg-4 col-xl-3 mt-2">
-            <div class="card p-2 img-border">
-                <a href="#">
-                    <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
-                </a>
-                <div class="card-body text-center">
-                    <a href="#" class="col-4">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                    </a>
-                    <p class="card-text col-4">${{ product.price }}</p>
-                </div>
-                <div class="card-body">
-                    <a href="#">{{ product.category }}</a>
-                </div>
-                <div class="card-body">
+<div class="container-fluid d-flex justify-content-center">
+    <div class="col-10">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
+                <div class="card p-2 img-border">
                     <a href="#">
-                        <button type="button" class="btn btn-secondary">Add to Cart</button>
+                        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
                     </a>
-                    <a href="#">
-                        <button type="button" class="btn btn-secondary">Product Info</button>
-                    </a>
+                    <div class="card-body text-center">
+                        <a href="#" class="col-4">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                        </a>
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <a href="#">{{ product.category.friendly_name }}</a>
+                        <p class="card-text  text-end">${{ product.price }}</p>
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <a href="#">
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </a>
+                        <a href="#">
+                            <button type="button" class="btn btn-secondary">Product Info</button>
+                        </a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

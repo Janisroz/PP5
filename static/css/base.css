@@ -7,6 +7,10 @@
 }
 
 /* General Rules */
+body {
+    background-color: #F8FAF8;
+}
+
 .text-upper {
     text-transform: uppercase;
 }
