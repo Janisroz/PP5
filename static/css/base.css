@@ -105,6 +105,9 @@ hr {
 }
 
 /* Products page */
+.form-control:focus  {
+    box-shadow: 0 0 0 0.25rem #486C79;
+}
 
 .product-name-link {
     font-family: "Anton", sans-serif;
