@@ -3,24 +3,32 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid">
     <div class="row">
-        <div class="col col-md-6">
-            <img src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+        <div class="col-12 col-md-6 mt-1 text-center">
+            <img src="{{ MEDIA_URL }}{{ product.image }}" class="img-fluid rounded img-border product-image p-2"
+                alt="{{ product.name }}">
         </div>
-        <div class="col col-md-6">
+        <div class="col-12 col-md-6 mt-1 text-center d-flex justify-content-center align-items-center flex-column">
             <h1>{{ product.name }}</h1>
-            <h3>{{ product.category }}</h3>
-            <p>{{ product.rating }}</p>
-            <div class="product-description">
+            <hr>
+            <a href="">
+                <h3>{{ product.category }}</h3>
+            </a>
+            $ {{ product.price }}
+            </h3>
+            <p><i class="fa-solid fa-star"></i> {{ product.rating }}</p>
+            <div class="product-description col-md-6">
                 <p>{{ product.description }}</p>
             </div>
-            <p>
-                {{ product.price }}
-            </p>
-            <a href="#">
-                <button type="button" class="btn btn-primary">Add to Cart</button>
-            </a>
+            <div>
+                <a href="{% url 'products' %}">
+                    <button type="button" class="btn btn-secondary">Keep Shopping</button>
+                </a>
+                <a href="#">
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </a>
+            </div>
         </div>
     </div>
 </div>

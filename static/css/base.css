@@ -72,10 +72,10 @@ header {
 }
 
 hr {
-    margin: auto;
+    width: 60%;
     color: #202123;
     opacity: 1;
-    border-top: calc(1px + 0.125em) solid;
+    border-top: 2px solid;
 }
 
 /* Index page */
@@ -118,6 +118,13 @@ hr {
     font-family: "Anton", sans-serif;
 }
 
+/* Product Detail page */
+
+.product-image {
+    max-height: 70vh;
+}
+
+/* Media Queries */
 
 @media (max-width: 576px) {
     .btn {
