@@ -28,6 +28,11 @@ body {
     border-color: #FA9E05;
 }
 
+.btn-primary:hover {
+    background-color: #D46C1E;
+    border-color: #D46C1E;
+}
+
 .btn-secondary {
     background-color: #486C79;
     border-color: #486C79;
@@ -44,6 +49,11 @@ strong {
 
 .img-border {
     border:2px solid #1B1A19 ;
+}
+
+a {
+    text-decoration: none;
+    color: #202123;
 }
 
 /* Nav Bar */
@@ -92,4 +102,25 @@ hr {
 
 #about-us-banner {
     background-color: #202123;
+}
+
+/* Products page */
+
+.product-name-link {
+    font-family: "Anton", sans-serif;
+}
+
+.card-title:hover {
+    color:#486C79 ;
+}
+
+.card-title {
+    font-family: "Anton", sans-serif;
+}
+
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 0.378rem 0.3rem ;
+    }
 }
