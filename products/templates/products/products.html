@@ -21,58 +21,100 @@
             </form>
         </div>
     </div>
-    <div class="row">
-        <nav class="navbar navbar-expand-md w-100">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#categorydropdown"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                Categories
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="categorydropdown">
-                <ul class="w-auto mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cardio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Resistance Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bodyweight Training</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</div>
-<div class="container-fluid d-flex justify-content-center">
-    <div class="col-10">
-        <div class="row">
-            {% for product in products %}
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
-                <div class="card p-2 img-border">
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
-                    </a>
-                    <div class="card-body text-center">
-                        <a href="{% url 'product_detail' product.id %}" class="col-4 product-name-link">
-                            <h3 class="card-title">{{ product.name }}</h3>
-                        </a>
-                    </div>
-                    <div class="card-body d-flex justify-content-between">
-                        <a href="#"><i class="fa-solid fa-tag"></i> {{ product.category.friendly_name }}</a>
-                        <p class="card-text  text-end">${{ product.price }}</p>
-                    </div>
-                    <div class="card-body d-flex justify-content-between">
-                        <a href="#">
-                            <button type="button" class="btn btn-primary">Add to Cart</button>
-                        </a>
-                        <a href="{% url 'product_detail' product.id %}">
-                            <button type="button" class="btn btn-secondary">Product Info</button>
-                        </a>
-                    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 d-flex justify-content-between">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#categories"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    Categories
+                </button>
+                <div class="collapse navbar-collapse" id="categories">
+                    <ul class="navbar-nav d-flex justify-content-center w-100">
+                        <li class="nav-item dropdown">
+                            <a class="font-weight-bold nav-link mr-5" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <h3 class="text-center">
+                                    Cardio
+                                </h3>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="font-weight-bold nav-link mr-5" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <h3 class="text-center">
+                                    Resistance Training
+                                </h3>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="font-weight-bold nav-link mr-5" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" href="#">
+                                <h3 class="text-center">
+                                    Body Weight Training
+                                </h3>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            {% endfor %}
+            </nav>
         </div>
     </div>
-</div>
-{% endblock %}
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
+                    <div class="card p-2 img-border">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
+                        </a>
+                        <div class="card-body text-center">
+                            <a href="{% url 'product_detail' product.id %}" class="col-4 product-name-link">
+                                <h3 class="card-title">{{ product.name }}</h3>
+                            </a>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <a href="#"><i class="fa-solid fa-tag"></i> {{ product.category.friendly_name }}</a>
+                            <p class="card-text  text-end">${{ product.price }}</p>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <a href="#">
+                                <button type="button" class="btn btn-primary">Add to Cart</button>
+                            </a>
+                            <a href="{% url 'product_detail' product.id %}">
+                                <button type="button" class="btn btn-secondary">Product Info</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav w-auto mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cardio
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resistance Training
+                    </a>
+                </li>
+            </ul>
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Body Weight Training
+                </a>
+            </li>
+        </div>
+    </nav>
