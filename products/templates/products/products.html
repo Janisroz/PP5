@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="categories">
                     <ul class="navbar-nav d-flex justify-content-between w-100">
                         <li class="nav-item dropdown">
-                            <a class="font-weight-bold nav-link mr-5" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            <a class="font-weight-bold nav-link mr-5" href="{% url 'products' %}?category=resistance_training" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <h3 class="text-center text-upper">
                                     Resistance Training
@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="font-weight-bold nav-link mr-5" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            <a class="font-weight-bold nav-link mr-5" href="{% url 'products' %}?category=cardio" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <h3 class="text-center text-upper">
                                     Cardio
@@ -48,7 +48,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="font-weight-bold nav-link mr-5" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" href="#">
+                                aria-expanded="false" href="{% url 'products' %}?category=body_weight_training">
                                 <h3 class="text-center text-upper">
                                     Body Weight Training
                                 </h3>
