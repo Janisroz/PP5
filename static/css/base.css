@@ -38,7 +38,10 @@ body {
     border-color: #486C79;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4 {
     font-family: "Anton", sans-serif;
 }
 
