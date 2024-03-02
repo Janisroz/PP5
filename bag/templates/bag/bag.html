@@ -3,5 +3,23 @@
 {% load static %}
 
 {% block content %}
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-upper">Your Bag</h1>
+            <hr>
+        </div>
+    </div>
+    {% if bag_items %}
+    {% else %}
+        <div class="row">
+            <div class="col text-center">
+                <h2>Your bag</h2>
+                <a href="{% url 'products' %}" class="bg-transparent">
+                    <button type="button" class="btn btn-primary btn-lg" id="shop-now-btn">Shop Now</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+</div>
 {% endblock %}
