@@ -131,11 +131,11 @@
                             <a href="{% url 'products' %}?category={{ product.category.name }}"><i class="fa-solid fa-tag"></i> {{ product.category.friendly_name }}</a>
                             <p class="card-text  text-end">${{ product.price }}</p>
                         </div>
-                        <div class="card-body d-flex justify-content-between">
-                            <a href="#">
+                        <div class=" d-flex justify-content-between mb-2 col-10 offset-1 flex-column flex-sm-row">
+                            <a href="#" class="text-center mb-1">
                                 <button type="button" class="btn btn-primary">Add to Cart</button>
                             </a>
-                            <a href="{% url 'product_detail' product.id %}">
+                            <a href="{% url 'product_detail' product.id %}" class="text-center">
                                 <button type="button" class="btn btn-secondary">Product Info</button>
                             </a>
                         </div>
