@@ -11,8 +11,8 @@
         </div>
     </div>
     {% if bag_items %}
-    <table class="table">   
-        <thead >
+    <table class="table">
+        <thead>
             <tr>
                 <th scope="col">Product Details</th>
                 <th scope="col"></th>
@@ -38,25 +38,24 @@
                     <p>${{ item.product.price }}</p>
                 </td>
                 <td class="py-3 w-25">
-                    <form class="form w-75" method="POST" action="#">
+                    <form class="form w-75 update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-sm btn-black" 
-                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                    <button class="decrement-qty btn btn-sm btn-black" data-item_id="{{ item.item_id }}"
+                                        id="decrement-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-minus fa-sm"></i>
                                         </span>
                                     </button>
                                 </div>
-                                <input class="form-control form-control-sm qty_input w-50" type="number"
-                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                    data-item_id="{{ item.item_id }}"
+                                <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                                    value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
                                     id="id_qty_{{ item.item_id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-sm btn-black"
-                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                    <button class="increment-qty btn btn-sm btn-black" data-item_id="{{ item.item_id }}"
+                                        id="increment-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-plus fa-sm"></i>
                                         </span>
@@ -78,9 +77,9 @@
                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                     <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                     {% if free_delivery_delta > 0 %}
-                        <p class="mb-1 text-danger">
-                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
-                        </p>
+                    <p class="mb-1 text-danger">
+                        You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                    </p>
                     {% endif %}
                 </td>
             </tr>
@@ -102,14 +101,14 @@
         </tbody>
     </table>
     {% else %}
-        <div class="row">
-            <div class="col text-center">
-                <h2>Your bag is empty</h2>
-                <a href="{% url 'products' %}" class="bg-transparent">
-                    <button type="button" class="btn btn-primary btn-lg">Shop Now</button>
-                </a>
-            </div>
+    <div class="row">
+        <div class="col text-center">
+            <h2>Your bag is empty</h2>
+            <a href="{% url 'products' %}" class="bg-transparent">
+                <button type="button" class="btn btn-primary btn-lg">Shop Now</button>
+            </a>
         </div>
+    </div>
     {% endif %}
 </div>
 {% endblock %}
@@ -119,23 +118,25 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+    $('.update-link').click(function (e) {
+    e.preventDefault(); // prevent default link behavior
+    var form = $(this).closest('td').find('.update-form'); // find the closest form
+    form.submit();
+})
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
