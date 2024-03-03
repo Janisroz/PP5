@@ -130,6 +130,11 @@ hr {
     max-height: 70vh;
 }
 
+/* Shopping Bag page */
+.table {
+    --bs-table-bg: transparent;
+}
+
 /* Media Queries */
 
 @media (max-width: 576px) {
