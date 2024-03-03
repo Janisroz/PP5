@@ -11,10 +11,11 @@
         </div>
     </div>
     {% if bag_items %}
+    <table class="table"></table>
     {% else %}
         <div class="row">
             <div class="col text-center">
-                <h2>Your bag</h2>
+                <h2>Your bag is empty</h2>
                 <a href="{% url 'products' %}" class="bg-transparent">
                     <button type="button" class="btn btn-primary btn-lg" id="shop-now-btn">Shop Now</button>
                 </a>

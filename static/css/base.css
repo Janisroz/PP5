@@ -19,6 +19,10 @@ body {
     background: transparent;
 }
 
+.dark-bg {
+    background-color: #202123;
+}
+
 .secondary-font-color {
     color: #F8FAF8;
 }
@@ -75,7 +79,7 @@ header {
 }
 
 hr {
-    width: 60%;
+    width: 100%;
     color: #202123;
     opacity: 1;
     border-top: 2px solid;
@@ -86,10 +90,6 @@ hr {
     height: calc(100vh - 60px);
     background: url('/media/gloves-dumbbells.jpg') no-repeat center center fixed;
     background-size: cover;
-}
-
-#home-bg > div {
-    margin-top: 5rem;
 }
 
 #change-head {
