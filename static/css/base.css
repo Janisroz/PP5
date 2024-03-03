@@ -135,6 +135,11 @@ hr {
     --bs-table-bg: transparent;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* Media Queries */
 
 @media (max-width: 576px) {
