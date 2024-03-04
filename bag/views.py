@@ -56,7 +56,7 @@ def remove_from_bag(request, item_id):
     bag = request.session.get('bag', {})
     try:
         bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+        messages.warning(request, f'Removed {product.name} from your bag')
         request.session['bag'] = bag
         return HttpResponse(status=200)
     except Exception as e:

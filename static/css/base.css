@@ -140,6 +140,11 @@ hr {
     cursor: pointer;
 }
 
+/* Toasts */
+.custom-toasts{
+    z-index: 999;
+}
+
 /* Media Queries */
 
 @media (max-width: 576px) {
