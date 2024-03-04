@@ -45,7 +45,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.head-font {
     font-family: "Anton", sans-serif;
 }
 
@@ -141,9 +142,6 @@ hr {
 }
 
 /* Toasts */
-.custom-toasts{
-    z-index: 999;
-}
 
 /* Media Queries */
 
