@@ -1,3 +1,4 @@
+# pylint: disable=import-error
 from django import forms
 from .models import Order
 
