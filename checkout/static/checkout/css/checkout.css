@@ -1,3 +1,29 @@
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border:2px solid #1B1A19;
+    background-color: #F8FAF8;
+    box-shadow: 0 1px 3px 0 #486C79;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    box-shadow: 0 1px 3px 0 #486C79;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #F8FAF8 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
 .form-group {
     margin-bottom: 1rem;
 }

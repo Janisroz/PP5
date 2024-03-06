@@ -64,6 +64,10 @@ a {
     color: #202123;
 }
 
+.text-info {
+    color: #486C79;
+}
+
 /* Nav Bar */
 header {
     height: 60px;
