@@ -1,7 +1,6 @@
 .StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
-    height: 40px;
     padding: 10px 12px;
     border:2px solid #1B1A19;
     background-color: #F8FAF8;
@@ -26,6 +25,16 @@
 
 .form-group {
     margin-bottom: 1rem;
+}
+
+select,
+select option {
+    color: #1B1A19;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 .loading-spinner {
