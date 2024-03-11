@@ -118,10 +118,17 @@
                 {% for product in products %}
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
                     <div class="card p-2 img-border">
+                        {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top"
                                 alt="{{ product.name }}">
                         </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top"
+                                alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
                         <div class="card-body text-center">
                             <a href="{% url 'product_detail' product.id %}" class="col-4 product-name-link">
                                 <h3 class="card-title">{{ product.name }}</h3>
