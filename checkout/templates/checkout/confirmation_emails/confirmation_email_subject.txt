@@ -1,1 +1,1 @@
-Train Up Order Confirmation NB: {{ oder.order_number }}
+Train Up Order Confirmation NB: {{ order.order_number }}
