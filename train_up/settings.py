@@ -30,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if 'USE_AWS' in os.environ:
+if 'DEBUG' in os.environ:
+
     DEBUG = False
 else:
     DEBUG = True
@@ -59,7 +60,8 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    'crispy_forms'
+    'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
