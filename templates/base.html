@@ -49,12 +49,11 @@
 </head>
 
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid mb-1">
         {% include 'includes/nav.html' %}
     </header>
     {% if messages %}
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end w-100">
-    <!-- <div class="message-container"> -->
         {% for message in messages %}
             {% with message.level as level %}
                 {% if level == 40 %}

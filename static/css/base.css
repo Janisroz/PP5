@@ -73,9 +73,11 @@ a {
 }
 
 /* Nav Bar */
-header {
-    height: 60px;
+.nav-image {
+    max-height: 60px;
+    max-width: 100%;
 }
+
 .nav-link,
 .dropdown-item {
     font-family: Anton, sans-serif ;
