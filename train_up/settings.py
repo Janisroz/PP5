@@ -36,7 +36,7 @@ if 'DEBUG' in os.environ:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['8000-janisroz-pp5-kmn8z897x3g.ws-eu109.gitpod.io',
+ALLOWED_HOSTS = ['8000-janisroz-pp5-kmn8z897x3g.ws-eu110.gitpod.io',
                  'train-up-pp5-da4fce5b9326.herokuapp.com'
                 ]
 
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'coaching',
 
     'crispy_forms',
     'storages',
