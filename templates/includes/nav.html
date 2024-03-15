@@ -12,9 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'products' %}">Shop Now</a>
         </li>
+        <!-- {% if request.user.is_authenticated %} -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Session Feed</a>
+          <a class="nav-link" href="{% url 'all_sessions' %}">Session Feed</a>
         </li>
+        <!-- {% endif %} -->
         <li class="nav-item">
           <a class="nav-link" href="#">Coaches</a>
         </li>

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-1">
+    <div class="row d-flex justify-content-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-2">
+                <h2 class="logo-font">Sessions</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center mt-2">
+        <div class="col-10">
+            <div class="row">
+                {% for session in all_sessions %}
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
+                    <div class="card p-2 img-border">
+                        <div class="card-body text-center">
+                            <a href="#" class="col-4 product-name-link">
+                                <h3 class="card-title">{{ session.title }}</h3>
+                                <p>{{ session.description }}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- {% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+
+{% endblock %} -->
