@@ -44,7 +44,7 @@
                                     <ul class="list-unstyled">
                                         {% for session in coach.sessions.all %}
                                             <li>
-                                                <a href="#">
+                                                <a href="{% url 'session_detail' session_id=session.id %}">
                                                     <button class="btn btn-secondary mb-1">
                                                         {{ session.title }}
                                                     </button>
@@ -52,6 +52,10 @@
                                             </li>
                                         {% endfor %}
                                     </ul>
+                                    {% else %}
+                                    <a href="{% url 'account_login' %}">
+                                        <h3>Log in to view my session</h3>
+                                    </a>
                                     {% endif %}
                                 </div>
 

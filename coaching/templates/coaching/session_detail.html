@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{{ session.product.image.url }}" class="d-block mx-lg-auto img-fluid" alt="Required Equipment : {{ session.product.name }}" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ session.title }}</h1>
+                <a href="{% url 'all_coaches' %}"><h2>{{ session.coach }}</h2></a>
+                <div class="lead">
+                    {{ session.description|safe }}
+                </div>
+                
+                <hr>
+                {{ session.exercises|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
