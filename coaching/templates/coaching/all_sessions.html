@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="container-fluid mt-1">
-    <div class="row d-flex justify-content-center">
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-2">
@@ -18,10 +17,29 @@
                 {% for session in all_sessions %}
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
                     <div class="card p-2 img-border">
+                        {% if session.product.image.url %}
+                        <a href="#">
+                            <img src="{{ session.product.image.url }}" class="card-img-top"
+                                alt="{{ session.product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="#">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top"
+                                alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
                         <div class="card-body text-center">
                             <a href="#" class="col-4 product-name-link">
                                 <h3 class="card-title">{{ session.title }}</h3>
-                                <p>{{ session.description }}</p>
+                            </a>
+                        </div>
+                        <div class="card-body d-flex flex-column flex-lg-row justify-content-between">
+                            <a href="{% url 'product_detail' product_id=session.product.pk %}"><i class="fa-solid fa-tag"></i> {{ session.product }}</a>
+                            <a href="#"><i class="fa-solid fa-user"></i> {{ session.coach }}</a>
+                        </div>
+                        <div class="card-body text-center d-none d-md-block">
+                            <a href="#" class="col-4 product-name-link">
+                                {{ session.description|safe }}
                             </a>
                         </div>
                     </div>

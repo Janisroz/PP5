@@ -120,7 +120,7 @@
                     <div class="card p-2 img-border">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top"
+                            <img src="{{ product.image.url }}" class="card-img-top"
                                 alt="{{ product.name }}">
                         </a>
                         {% else %}

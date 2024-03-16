@@ -166,6 +166,11 @@ hr {
     font-family: "Anton", sans-serif;
 }
 
+.card {
+    height: 100%; 
+}
+
+
 /* Product Detail page */
 
 .product-image {
