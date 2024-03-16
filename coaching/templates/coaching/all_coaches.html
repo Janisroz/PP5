@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-upper">Coaches</h1>
+            <hr>
+        </div>
+    </div>
+    <div id="accordion">
+        <div class="card img-border">
+            <div class="card-header d-flex flex-column flex-md-row justify-content-center" id="heading">
+                <h5 class="mb-0 d-flex flex-column flex-md-row">
+                    {% for coach in all_coaches %}
+                    <button class="btn btn-primary mb-1 mx-2" data-bs-toggle="collapse" href="#collapse{{ forloop.counter }}"
+                        role="button" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                        {{ coach.name }}
+                    </button>
+                    {% endfor %}
+                </h5>
+            </div>
+            {% for coach in all_coaches %}
+                <div id="collapse{{ forloop.counter }}" class="collapse multi-collapse"
+                    aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <div class="container col-xxl-10 px-4 py-5">
+                            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                                <div class="col-10 col-sm-8 col-lg-6">
+                                    {% if coach.image.url %}
+                                    <img src="{{ coach.image.url }}" class="d-block mx-lg-auto img-fluid img-border" alt="{{ coach.name }}" width="700" height="500" loading="lazy">
+                                    {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="d-block mx-lg-auto img-fluid img-border" alt="{{ coach.name }}" width="700" height="500" loading="lazy">
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-6">
+                                    <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ coach.name }}</h2>
+                                    <p>Age: {{ coach.age }}</p>
+                                    {{ coach.description|safe }}
+                                    {% if request.user.is_authenticated %}
+                                    <h3>Check out my sessions:</h3>
+                                    <ul class="list-unstyled">
+                                        {% for session in coach.sessions.all %}
+                                            <li>
+                                                <a href="#">
+                                                    <button class="btn btn-secondary mb-1">
+                                                        {{ session.title }}
+                                                    </button>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+{% endblock %}
