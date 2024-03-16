@@ -19,6 +19,13 @@
                 
                 <hr>
                 {{ session.exercises|safe }}
+
+                <p>
+                    Like this session? Check out what you need below:
+                </p>
+                <a href="{% url 'product_detail' product_id=session.product.id %}">
+                    <button class="btn btn-secondary">{{ session.product.name }}</button>
+                </a>
                 </div>
             </div>
         </div>
