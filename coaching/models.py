@@ -6,6 +6,9 @@ class Coach(models.Model):
     """
     Model for Coaches
     """
+    class Meta:
+        verbose_name_plural = 'Coaches'
+
     name = models.CharField(max_length=254)
     age = models.IntegerField()
     description = models.TextField()
@@ -26,3 +29,6 @@ class Session(models.Model):
     title = models.CharField(max_length=254)
     description = models.TextField()
     exercises = models.TextField()
+
+    def __str__(self):
+        return self.title
