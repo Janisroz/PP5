@@ -18,27 +18,27 @@
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-2">
                     <div class="card p-2 img-border">
                         {% if session.product.image.url %}
-                        <a href="#">
+                        <a href="{% url 'session_detail' session_id=session.id %}">
                             <img src="{{ session.product.image.url }}" class="card-img-top"
                                 alt="{{ session.product.name }}">
                         </a>
                         {% else %}
-                        <a href="#">
+                        <a href="{% url 'session_detail' session_id=session.id %}">
                             <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top"
                                 alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body text-center">
-                            <a href="#" class="col-4 product-name-link">
+                            <a href="{% url 'session_detail' session_id=session.id %}" class="col-4 product-name-link">
                                 <h3 class="card-title">{{ session.title }}</h3>
                             </a>
                         </div>
                         <div class="card-body d-flex flex-column flex-lg-row justify-content-between">
                             <a href="{% url 'product_detail' product_id=session.product.pk %}"><i class="fa-solid fa-tag"></i> {{ session.product }}</a>
-                            <a href="#"><i class="fa-solid fa-user"></i> {{ session.coach }}</a>
+                            <a href="{% url 'all_coaches' %}"><i class="fa-solid fa-user"></i> {{ session.coach }}</a>
                         </div>
                         <div class="card-body text-center d-none d-md-block">
-                            <a href="#" class="col-4 product-name-link">
+                            <a href="{% url 'session_detail' session_id=session.id %}" class="col-4 product-name-link">
                                 {{ session.description|safe }}
                             </a>
                         </div>
@@ -51,29 +51,3 @@
 </div>
 {% endblock %}
 
-<!-- {% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-    $('#sort-selector').change(function () {
-        var selector = $(this);
-        var currentUrl = new URL(window.location);
-
-        var selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            var sort = selectedVal.split("_")[0];
-            var direction = selectedVal.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-</script>
-
-{% endblock %} -->
