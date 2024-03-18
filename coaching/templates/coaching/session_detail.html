@@ -28,7 +28,7 @@
                 </a>
                 {% if request.user.is_superuser %}
                 <div class=" d-flex justify-content-center mb-2 col-10 flex-row  mt-2 ">
-                    <a href="#" class="text-center mb-1 mx-1">
+                    <a href="{% url 'edit_session' session.id %}" class="text-center mb-1 mx-1">
                         <button type="button" class="btn btn-info">Edit Session</button>
                     </a>
                     <a href="{% url 'delete_session' session.id %}" class="text-center mx-1">

@@ -142,6 +142,34 @@ def add_session(request):
     return render(request, template, context)
 
 
+def edit_session(request, session_id):
+    """ Edit a coach """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('all_sessions'))
+
+    session = get_object_or_404(Session, pk=session_id)
+    if request.method == 'POST':
+        form = SessionForm(request.POST, instance=session)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated session!')
+            return redirect(reverse('all_sessions'))
+        else:
+            messages.error(request, 'Failed to update session. Please ensure the form is valid.')
+    else:
+        form = SessionForm(instance=session)
+        messages.info(request, f'You are editing {session.title}')
+
+    template = 'coaching/edit_session.html'
+    context = {
+        'form': form,
+        'session': session,
+    }
+
+    return render(request, template, context)
+
+
 def delete_session(request, session_id):
     """ Delete a session from the site """
     if not request.user.is_superuser:
