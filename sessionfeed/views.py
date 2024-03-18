@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .models import Post
 from .forms import PostForm
@@ -29,3 +29,15 @@ def session_feed(request):
     }
 
     return render(request, template, context)
+
+
+def delete_post(request, session_id):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('session_feed'))
+
+    session = get_object_or_404(Post, pk=session_id)
+    session.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('session_feed'))
