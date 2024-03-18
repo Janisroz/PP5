@@ -48,14 +48,15 @@
                         {% else %}
                         <p class="mb-0 text-upper fs-4 head-font">{{ session.session.title }}</p>
                         {% endif %}
-                        <div class="mb-1 text-body-secondary">{{ session.post_date }}</div>
-                        <p class="card-text mb-auto">{{ session.description }}</p>
-                        <p class="card-text mb-auto"><i class="fa-solid fa-star"></i> {{ session.session_rating }}</p>
+                        <p class="mb-1 text-body-secondary">{{ session.post_date }}</p>
+                        <div class="col-7">
+                            <p class="card-text mb-auto text-wrap">{{ session.description }}</p>
+                            <p class="card-text mb-auto"><i class="fa-solid fa-star"></i> {{ session.session_rating }}</p>
+                        </div>
                     </div>
                     <div class="col-auto ">
                         <img class="bd-placeholder-img" width="200" height="250" src="{{ session.session.product.image.url }}"
-                            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" alt="Session Equipment"
-                            focusable="false">
+                            preserveAspectRatio="xMidYMid slice" alt="Session Equipment">
                         </img>
 
                     </div>

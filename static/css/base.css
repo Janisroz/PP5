@@ -229,6 +229,11 @@ hr {
     cursor: pointer;
 }
 
+/* Session Feed */
+.text-wrap {
+    overflow-wrap: anywhere;
+}
+
 /* Media Queries */
 
 @media (max-width: 576px) {
