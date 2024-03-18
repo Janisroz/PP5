@@ -49,7 +49,7 @@ def add_coach(request):
             messages.error(request, 'Failed to add coach. Please ensure the form is valid.')
     else:
         form = CoachForm()
-        
+
     template = 'coaching/add_coach.html'
     context = {
         'form': form,
@@ -77,7 +77,7 @@ def edit_coach(request, coach_id):
         form = CoachForm(instance=coach)
         messages.info(request, f'You are editing {coach.name}')
 
-    template = 'coaching/add_coach.html'
+    template = 'coaching/edit_coach.html'
     context = {
         'form': form,
         'coach': coach,
