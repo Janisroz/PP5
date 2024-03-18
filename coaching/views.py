@@ -32,6 +32,7 @@ def coaches(request):
 
     return render(request, 'coaching/all_coaches.html', context)
 
+
 def add_coach(request):
     """ Add a coach to the site """
     if not request.user.is_superuser:
@@ -52,6 +53,34 @@ def add_coach(request):
     template = 'coaching/add_coach.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_coach(request, coach_id):
+    """ Edit a coach """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('all_coaches'))
+
+    coach = get_object_or_404(Coach, pk=coach_id)
+    if request.method == 'POST':
+        form = CoachForm(request.POST, request.FILES, instance=coach)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated coach!')
+            return redirect(reverse('all_coaches'))
+        else:
+            messages.error(request, 'Failed to update coach. Please ensure the form is valid.')
+    else:
+        form = CoachForm(instance=coach)
+        messages.info(request, f'You are editing {coach.name}')
+
+    template = 'coaching/add_coach.html'
+    context = {
+        'form': form,
+        'coach': coach,
     }
 
     return render(request, template, context)

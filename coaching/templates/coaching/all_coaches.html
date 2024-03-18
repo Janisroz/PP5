@@ -63,8 +63,11 @@
                                         {% endfor %}
                                     </ul>
                                     {% if request.user.is_superuser %}
-                                    <div class="mb-2 col-10 mt-2 ">
-                                        <a href="{% url 'delete_coach' coach.id %}" class="text-center mx-1">
+                                    <div class="mb-2 col-10 mt-2 d-flex flex-column">
+                                        <a href="{% url 'edit_coach' coach.id %}" class=" mx-1 mb-1">
+                                            <button type="button" class="btn btn-secondary">Edit Coach</button>
+                                        </a>
+                                        <a href="{% url 'delete_coach' coach.id %}" class="mx-1">
                                             <button type="button" class="btn btn-danger">Delete Coach</button>
                                         </a>
                                     </div>

@@ -1,6 +1,7 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
 from .models import Coach
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class CoachForm(forms.ModelForm):
@@ -12,6 +13,7 @@ class CoachForm(forms.ModelForm):
         model = Coach
         fields = '__all__'
 
+    description = forms.CharField(widget=SummernoteWidget())
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
