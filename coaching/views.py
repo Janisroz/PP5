@@ -57,6 +57,17 @@ def add_coach(request):
     return render(request, template, context)
 
 
+def delete_coach(request, coach_id):
+    """ Delete a coach from the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('all_coaches'))
+
+    coach = get_object_or_404(Coach, pk=coach_id)
+    coach.delete()
+    messages.success(request, 'Coach deleted!')
+    return redirect(reverse('all_coaches'))
+
 
 def session_detail(request, session_id):
     """
