@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Session, Coach
-from .forms import CoachForm
+from .forms import CoachForm, SessionForm
 # Create your views here.
 
 
@@ -113,3 +113,30 @@ def session_detail(request, session_id):
     }
 
     return render(request, 'coaching/session_detail.html', context)
+
+
+def add_session(request):
+    """
+    Add a sesion to the site
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('coaching/all_sessions.html'))
+
+    if request.method == 'POST':
+        form = SessionForm(request.POST)
+        if form.is_valid():
+            coach = form.save()
+            messages.success(request, 'Successfully added new session!')
+            return redirect(reverse('all_sessions'))
+        else:
+            messages.error(request, 'Failed to add session. Please ensure the form is valid.')
+    else:
+        form = SessionForm()
+
+    template = 'coaching/add_session.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
