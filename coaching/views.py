@@ -140,3 +140,15 @@ def add_session(request):
     }
 
     return render(request, template, context)
+
+
+def delete_session(request, session_id):
+    """ Delete a session from the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('all_sessions'))
+
+    session = get_object_or_404(Session, pk=session_id)
+    session.delete()
+    messages.success(request, 'Session deleted!')
+    return redirect(reverse('all_sessions'))
