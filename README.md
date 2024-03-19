@@ -1,110 +1,85 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Introduction
 
-Welcome Janis Rozenbergs,
+Train-Up is a website developed using Django, HTML, CSS, Python and JavaScript. This business uses a business to consumer e-commerce model. The business sells sports equipment to customers and also provides users with session plans created by professional coaches using this equipment. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Users of the site can search for products or filter them based on the category. They can select products and quantities and proceed to purchase in a user friendly process.  Users can also view the profiles of the professional coaches employed by the business to see what they specialize in. Once equipment has been purchased they will also have access to the sessions that the coach has created.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Registered users can save their address. View their purchased equipment and the training sessions associated with this equipment. They can also post their sessions and give feedback on their experience of the session.
 
-## Gitpod Reminders
+The business owner can create, edit and delete equipment, that is for sale as well as the sessions and coaches. They can also delete user session posts if necessary. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Image of webmockup
 
-`python3 -m http.server`
+[View the live website on Heroku](https://train-up-pp5-da4fce5b9326.herokuapp.com/)
 
-A blue button should appear to click: _Make Public_,
+Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
 
-Another blue button should appear to click: _Open Browser_.
+## Table of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
 
-A blue button should appear to click: _Make Public_,
+### Overall Goals
+- To provide an ecommerce solution for a business selling fitness products to consumers.
+- To allow business owners to manage and modify existing products and to add new products, coaches and sessions.
+- To provide users with a smooth and user friendly means to purchase products, and share their experience with the sessions.
 
-Another blue button should appear to click: _Open Browser_.
+### The Strategy Plane
+- Train-Up is a business to consumer ecommerce website that allows users to select, purchase and share their experience with their purchases. The business owner is able to manage the products & content on offer on the site. The design of the sites main goal is to allow users a clear and easy to follow space to purchase products, and then to return to the site to get training sessions from the site and post about their experience. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### The Sites Ideal User
+- Interested in fitness.
+- Interested in buying a product that allows them to elevate their fitness journey and provide better results.
+- Interested in not only getting a product but then returning to get inspired on training plans, this means that even beginners would feel comfortable purchasing this equipment as they would be able to see how to use it.
 
-To log into the Heroku toolbelt CLI:
+### Site Goals
+- To provide users with a place to purchase sports equipment.
+- To provide users with a place to see how to use purchased equipment and give feedback on their sessions.
+- To promote Train-Up as the preferred site for users to purchase sports equipment.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
 
-------
+A total of 8 epics were created which were expanded into a total of 26 User Stories. The stories and epics were monitored using a kanban board you can find [Here](https://github.com/users/Janisroz/projects/3/views/1). Below is a basic layout of the epics and user stories:
 
-## Release History
+1. Django Initial Setup
+    - Create Django Project
+    - Create first app
+    - Install required packages
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+2. Viewing and Navigation
+    - View a list of products
+    - View individual Products
+    - View a home page
 
-**September 20 2023:** Update Python version to 3.9.17.
+3. Registration
+    - Register a new account
+    - Email confirmation
+    - Login and logout of an account
+    - Login using social media?
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+4. User Account
+    - Edit user profile
+    - View purchases
+    - Post completed session
+ 
+5. Sorting and Searching
+    - Sort products 
+    - Sort by category
+    - Search by name
+    - See what has been searched for
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+6. Purchasing and Checkout
+    - Easily add items to basket
+    - Edit basket
+    - Easily checkout
+    - View order history
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+7. Site Managemeny
+    - Add edit and delete products 
+    - Add edit and delete coaches
+    - Add edit and delete Sessions
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+8. Coaches
+    - View coach info
+    - View coaches sessions once logged in
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
