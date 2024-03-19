@@ -72,6 +72,29 @@ a {
     color: #486C79;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+  }
+  
+footer {
+    margin-top: auto; 
+  }
+
+/* Mailchimp */
+#mc_embed_signup {
+    background: transparent;
+    false;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+}
+
 /* Nav Bar */
 .nav-image {
     max-height: 60px;
