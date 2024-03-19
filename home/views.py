@@ -1,4 +1,3 @@
-# pylint: disable=import-error
 from django.shortcuts import render
 
 

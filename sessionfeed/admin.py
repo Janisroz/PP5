@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Post
 
+
 # Register your models here.
 @admin.register(Post)
 class Postadmin(admin.ModelAdmin):
@@ -10,4 +11,3 @@ class Postadmin(admin.ModelAdmin):
     list_display = ('author', 'session')
     search_fields = ['author', 'sesion']
     list_filter = ('author', 'session')
-

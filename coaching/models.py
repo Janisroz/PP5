@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 
+
 # Create your models here.
 class Coach(models.Model):
     """
@@ -32,3 +33,4 @@ class Session(models.Model):
 
     def __str__(self):
         return self.title
+        

@@ -109,7 +109,7 @@ def session_detail(request, session_id):
     session = get_object_or_404(Session, pk=session_id)
 
     context = {
-        'session' : session
+        'session': session
     }
 
     return render(request, 'coaching/session_detail.html', context)

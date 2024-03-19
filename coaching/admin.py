@@ -24,3 +24,4 @@ class SessionAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'coach', 'product']
     list_filter = ('title', 'coach', 'product')
     summernote_fields = ('description', 'exercises',)
+    

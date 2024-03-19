@@ -14,3 +14,4 @@ class MediaStorage(S3Boto3Storage):
     Show S3 where media files are
     """
     location = settings.MEDIAFILES_LOCATION
+    
