@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid" id="home-bg">
+    <div class="row bg-transparent">
+        <div class="col-12 bg-transparent">
+            <h1 class="text-upper text-center bg-transparent secondary-font-color" id="change-head">The page you are looking for isn't available</h1>
+        </div>
+        <div class="col-12 bg-transparent text-center">
+            <a href="{% url 'products' %}" class="bg-transparent">
+                <button type="button" class="btn btn-primary btn-lg" id="shop-now-btn">Shop Now</button>
+            </a>
+        </div>
+        <div class="col-12 bg-transparent text-center">
+            <a href="{% url '' %}" class="bg-transparent">
+                <button type="button" class="btn btn-secondary btn-lg mt-4" >Home</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
