@@ -319,6 +319,10 @@ As part of the assessment , a Facebook page was established for the company. Soc
 
 ![Facebook page](docs/README_images/facebook-page.jpg)
 
+## Testing
+
+All testing can be viewed in the [TESTING.md](TESTING.md)
+
 ## Technologies Used
 
 - Python 
@@ -404,10 +408,10 @@ The site was deployed on Heroku the live link can be found here - [View the live
 - Heroku Deployment Steps:
 
     - Sign up or log in to Heroku.
-    - Create a new app from the Heroku Dashboard.
+    - Create a new app from the Heroku Dashboard.    
     - Give the app a unique name and select a suitable region.
-    - Navigate to the deploy tab and then to the resources tab.
-    - Add the Heroku Postgres database to the app.
+    - Navigate to the settings tab.
+    - Add the elephent SQL DATABASE_URL to the config vars.
     - Copy the DATABASE_URL from config vars for Django configuration.
     - Create an env.py file in the Django app repository and set environment variables for DATABASE_URL and SECRET_KEY.
     - Add the secret key and other environment variables to Heroku Config Vars.
@@ -433,3 +437,22 @@ The site was deployed on Heroku the live link can be found here - [View the live
     - Insert the keys into env.py and Heroku Config Vars.
     - Configure settings file to point to the required variables.
     - Follow Stripe's documentation for integrating Stripe within Django.
+
+### Forking the GitHub Repository
+
+- Sign in to GitHub or create an account if you don't have one.
+- Find the repository at [https://github.com/Janisroz/PP5](https://github.com/Janisroz/PP5)
+- On the top-right side of the repository page, click on the "Fork" button.
+- This action will create a duplicate copy of the repository in your GitHub account.
+
+### Cloning a GitHub Repository:
+- Go to [https://github.com/Janisroz/PP5](https://github.com/Janisroz/PP5)
+- Click on the arrow next to the green "Code" button.
+- Select the "Clone by HTTPS" option and copy the provided URL.
+- Open your preferred code editor and navigate to the terminal.
+- Change the directory to the location where you want to clone the repository.
+- Type 'git clone' followed by the copied HTTPS link from GitHub.
+- Press Enter, and Git will clone the repository to your local machine.
+
+## Aclnowledgements
+A massive thanks to my mentor Daisy McGirr for the constant support throughout the whole course and especially in this project. Also a thanks to the CI Tutor support team who were able to help with issues I had throughout the course
