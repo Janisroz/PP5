@@ -1,7 +1,7 @@
 /* Main Setup */
 * {
     background:#F8FAF8;
-    font-family: Sarabun, sans-serif;
+    font-family: "Sarabun", sans-serif;
     color: #1B1A19;
     --bs-navbar-toggler-border-color:#1B1A19;
 }
