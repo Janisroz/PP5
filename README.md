@@ -10,7 +10,7 @@ Registered users can save their address. View their purchased equipment and the 
 
 The business owner can create, edit and delete equipment, that is for sale as well as the sessions and coaches. They can also delete user session posts if necessary. 
 
-## Image of webmockup
+![View the live website on Heroku](docs/README_images/multi-device-mock-up.jpg)
 
 [View the live website on Heroku](https://train-up-pp5-da4fce5b9326.herokuapp.com/)
 
@@ -215,5 +215,221 @@ Two fonts were used throughout the development of the project: Anton was used fo
 
 ### Images
 
-All images were acquired from the free image site [Pexels](https://www.pexels.com/).
+All images were acquired from the free image site [Pexels](https://www.pexels.com/). The logo of the site was created using [Canva](https://www.canva.com/).
 
+## Features
+
+### Navigation
+
+The main navigation consists of the logo on the left side which links back to the home page and a number of links on the right side. Account management is available from the nav bar and an extra link to sessions is added when a user is logged in. Using Bootstrap navigation tools the nav compresses to a hamburger menu when on smaller devices. When an admin is logged in the nav also provides a link to the add new products page.
+
+![navigation](docs/README_images/nav-bar.jpg)
+
+### Footer 
+
+A basic footer was created with a link to the sites Facebook Page and also a signup form to the sites newsletter. The choice to insert the newsletter signup to the footer was deliberate ensuring that users have a chance to sign up at any time.
+
+![footer](docs/README_images/footer.jpg)
+
+### Home Page
+
+The home welcomes users to the site and immediately calls them to action with a large button urging them to check out our products. There is also a smaller learn more button linking the user to the information page if users want to learn more about the site.
+
+![Home Page](docs/README_images/home-page.jpg)
+
+### All Products
+
+The all products page features a search bar and some filtering options to allow the user to find exactly what they are looking for. 
+
+![All Products Page](docs/README_images/all-products.jpg)
+
+### Individual Products
+
+Each product has its own page that allows users to select a quantity of an item and add that item to their bag it also provides the price rating and description of the product
+
+![Product Page](docs/README_images/individual-product.jpg)
+
+### Adding To Bag
+
+When a product is added to the users bag a message is displayed informing the user that an item has been added to their bag and also provides a link to the bag allowing them to proceed to checkout
+
+![Add to Bag Message](docs/README_images/add-to-bag-message.jpg)
+
+### Shopping Bag
+
+The Shopping bag page allows users to review what they have added to their cart adjust quantities or remove items altogether. It clearly shows the total amount to pay and also currently highlights the free delivery as at the moment the site will run a free delivery promotion that can be seen on the home page of the site. If the user chooses to continue shopping or to proceed to checkout both options are available as buttons at the bottom of the page.
+
+![Shopping Bag Page](docs/README_images/shopping-bag.jpg)
+
+### Checkout Page
+
+When a user decides it is time to complete the purchase they are directed to the checkout page. This page contains a order summary of what the user has selected and a checkout form. If a user is logged in and has oreviously saved their delivery details these will be pre-populated. Below that is a stripe element requiring card details. As it is currently only using testing functionality only the test card information can only be used.
+
+![Checkout Page](docs/README_images/checkout-page.jpg)
+
+### Order Confirmation 
+
+When an order is complete a number of things happen. A message is displayed confirming to the user that the order was succesful and that an email has been sent to the provided email. The user is also redirected to the order success page where there is a breakdown of their order details and a link to continue shopping. Finally the user recieves an email to the provided email confirming their purchase.
+
+![Order Confirmation message](docs/README_images/order-succesful-toast.jpg)
+
+![Order Confirmation Page](docs/README_images/order-succesful-page.jpg)
+
+![Order Confirmation Email](docs/README_images/order-successful-email.jpg)
+
+### Coaches Page
+
+The coaches page provides users with a profile for each coach and admin have the ability to add, edit and delete coaches all from this page. If a user is logged in they are also provided with links to the sessions that the coach is linked to.
+
+![Coaches page](docs/README_images/coach-page.jpg)
+
+### Sessionn Feed
+
+The session feed is a location for users of the site to post their experiences with the equipment. Users can give ratings on the sessions and give a description of how the session went. This feature urges users to return to the site to use the sessions that come with their equipment and also post about their experience with it. Admin users can also delete posts from this page if they deem them inapropriate.
+
+![Session Feed page](docs/README_images/session-feed-page.jpg)
+
+### All Session Page
+
+The all sessions page provides logged in users to access to all the workout sesions on the site. This page displays all the sessions allowing logged in users to check out any session and possibly purchase required equipment if they like the workouts. Admin users can also add posts from this page. Each card has a short workout description and a link to the coach and the equipment required.
+
+![All Sessions page](docs/README_images/all-sessions-page.jpg)
+
+### Session Detail Page
+
+Each session has its own page that details the workout that is associated with it. Admin staff can edit or delete the session here. It also provides a link to the equipment required in case the user chooses that they would like to use our equipment and do this workout.
+
+![Session Detail page](docs/README_images/session-detail-page.jpg)
+
+## Future Enhancements
+
+In the future there are a number of enhancements that would be nice to add. The main areas that enhancements could be added to include:
+
+- More sessions- this would be a benefit as users would be more interested in purchasing a product with more workout options available to them especially beginners. Workouts with more than one piece of equipment for sale could also motivate users to purchase more equipment
+
+- Exclusive sessions that are only available when you have purchased the equipment would motivate users to make purchases.
+
+- Reacting and commenting on the session feed would be a positive addition to allow users further interaction with each other
+
+- Social media login using Gmail, Facebook, Instagram etc.
+
+## Social Media Marketing
+
+As part of the assessment , a Facebook page was established for the company. Social media plays a pivotal role in the marketing strategy of any ecommerce website, and the page was designed to be an integral part of the business's marketing approach. It featured links directing users from the social platform to the main website, aiming to boost traffic and engagement. The content on the page urged users to visit the site. 
+
+![Facebook page](docs/README_images/facebook-page.jpg)
+
+## Technologies Used
+
+- Python 
+    - The following python modules were used in the project: 
+        - asgiref==3.7.2
+        - boto3==1.34.61
+        - botocore==1.34.61
+        - cloudinary==1.38.0
+        - dj-database-url==0.5.0
+        - dj3-cloudinary-storage==0.0.6
+        - Django==3.2.24
+        - django-allauth==0.41.0
+        - django-countries==7.2.1
+        - django-crispy-forms==1.14.0
+        - django-storages==1.14.2
+        - django-summernote==0.8.20.0
+        - gunicorn==21.2.0
+        - jmespath==1.0.1
+        - oauthlib==3.2.2
+        - pillow==10.2.0
+        - psycopg2==2.9.9
+        - python3-openid==3.2.0
+        - pytz==2024.1
+        - requests-oauthlib==1.3.1
+        - s3transfer==0.10.0
+        - sqlparse==0.4.4
+        - stripe==8.5.0
+        - urllib3==1.26.15
+
+- Django
+    - Django was used as the main framework throughout development of this site. Many of its included packages were used such as AllAuth that provided account management functionality.
+
+- Heroku
+    - Heroku was the platform that the live site was deployed on.
+
+- ElephantSQL
+    - Was used to manages PostgreSQL databases throughout development and deployment
+
+- JavaScript
+    - Custom Javascript was used throughout the site for a number of functions such as controlling buttons, enabling and disabling forms and buttons aswell as displaying messages and controlling collapsable elements.
+
+- Bootstrap
+    - Bootstrap 5.3 was used extensively to format the layout of the site as well as providing different elements used throughout the site.
+
+- Font Awesome
+    - Multiple icons were used from font awesome across the site
+
+- Google Fonts
+    - The custom fonts used by the site were imported from Google Fonts
+
+- CSS
+    - Custom CSS was used throughout the site to style elements for an original style.
+
+- HTML 
+    - HTML was used as the base language for the templates created for the site.
+
+### Packages 
+
+- Gitpod was used to develop the site
+
+- Git was used to create the repository and for version control throughout development
+
+- Github was used for storing the repository
+
+- Figma was used to develop the wireframes 
+
+- Canva was used to develop the logo
+
+- DrawSQL was used to develop the model plans
+
+### Resources Used
+
+- Django Documentation was used extensively throughout deveolopent
+
+- Bootstrap Documentation was used extensively to style layouts
+
+- Django Summernote docs were used to implement the Summernote element in the forms
+
+## Deployment
+
+The site was deployed on Heroku the live link can be found here - [View the live website on Heroku](https://train-up-pp5-da4fce5b9326.herokuapp.com/)
+
+- Heroku Deployment Steps:
+
+    - Sign up or log in to Heroku.
+    - Create a new app from the Heroku Dashboard.
+    - Give the app a unique name and select a suitable region.
+    - Navigate to the deploy tab and then to the resources tab.
+    - Add the Heroku Postgres database to the app.
+    - Copy the DATABASE_URL from config vars for Django configuration.
+    - Create an env.py file in the Django app repository and set environment variables for DATABASE_URL and SECRET_KEY.
+    - Add the secret key and other environment variables to Heroku Config Vars.
+    - Update settings.py with necessary imports and configurations, including database settings.
+    - Migrate the models to the new database connection.
+    - Create an S3 bucket on Amazon AWS for static and media files.
+    - Copy bucket details into the settings file and env.py.
+    - Set AWS access keys and secret access keys in env.py and Heroku Config Vars.
+    - Add the DISABLE_COLLECTSTATIC key with value 1 to Heroku Config Vars.
+    - Install required packages from requirements.txt.
+    - Configure static files settings in settings.py.
+    - Link the templates directory in Heroku.
+    - Add Heroku to the ALLOWED_HOSTS list.
+    - Create media, static, and templates folders.
+    - Create a Procfile with the command to run the app.
+    - Add, commit, and push changes to GitHub.
+    - Deploy the branch manually in Heroku and monitor build logs for errors.
+    - Upon successful deployment, access the live site through the provided link.
+
+- Stripe Integration:
+
+    - Create a Stripe account and obtain developer API keys.
+    - Insert the keys into env.py and Heroku Config Vars.
+    - Configure settings file to point to the required variables.
+    - Follow Stripe's documentation for integrating Stripe within Django.
