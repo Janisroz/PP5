@@ -30,11 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if 'DEBUG' in os.environ:
-
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-janisroz-pp5-kmn8z897x3g.ws-eu110.gitpod.io',
                  'train-up-pp5-da4fce5b9326.herokuapp.com'
