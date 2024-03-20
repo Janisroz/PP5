@@ -17,9 +17,8 @@
         <div class="col-12 col-md-6 mt-1 text-center d-flex justify-content-center align-items-center flex-column">
             <h1>{{ product.name }}</h1>
             <hr>
-            <a href="">
-                <h3>{{ product.category }}</h3>
-            </a>
+            <h2>{{ product.category }}</h2>
+            <h3>
             $ {{ product.price }}
             </h3>
             <p><i class="fa-solid fa-star"></i> {{ product.rating }}</p>
@@ -29,11 +28,11 @@
             {% include 'products/includes/add_product_form.html' %}
             {% if request.user.is_superuser %}
             <div class=" d-flex justify-content-center mb-2 col-10 flex-row  mt-2 ">
-                <a href="{% url 'edit_product' product.id %}" class="text-center mb-1 mx-1">
-                    <button type="button" class="btn btn-info">Edit Product</button>
+                <a href="{% url 'edit_product' product.id %}" class="text-center mb-1 mx-1 btn btn-info">
+                    Edit Product
                 </a>
-                <a href="{% url 'delete_product' product.id %}" class="text-center mx-1">
-                    <button type="button" class="btn btn-danger">Delete Product</button>
+                <a href="{% url 'delete_product' product.id %}" class="text-center mx-1 btn btn-danger">
+                    Delete Product
                 </a>
                 </a>
             </div>

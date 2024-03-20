@@ -7,7 +7,7 @@
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
-                            data-item_id="{{ product.id }}" ">
+                            data-item_id="{{ product.id }}" aria-label="Decrement Quantity">
                             <span class="icon">
                                 <i class="fas fa-minus"></i>
                             </span>
@@ -16,10 +16,10 @@
                     <input class="form-control qty_input text-center" type="number"
                         name="quantity" value="1" min="1" max="99"
                         data-item_id="{{ product.id }}"
-                        id="id_qty_{{ product.id }}">
+                        id="id_qty_{{ product.id }}" title="Quantity selector">
                     <div class="input-group-append">
                         <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                            data-item_id="{{ product.id }}">
+                            data-item_id="{{ product.id }}" aria-label="Increment Quantity">
                             <span class="icon">
                                 <i class="fas fa-plus"></i>
                             </span>
@@ -30,8 +30,8 @@
         </div>
     </div>
     <div class="col mt-2">
-        <a href="{% url 'products' %}">
-            <button type="button" class="btn btn-secondary">Keep Shopping</button>
+        <a href="{% url 'products' %}" class="btn btn-secondary">
+            Keep Shopping
         </a>
         <input type="submit" class="btn btn-primary" value="Add to Cart">
     </div>

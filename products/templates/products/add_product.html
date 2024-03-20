@@ -16,8 +16,8 @@
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
-                    <a href="{% url 'products' %}">
-                        <button type="button" class="btn btn-secondary btn-md mt-2"><i class="fas fa-chevron-left bg-transparent secondary-font-color"></i> Back to Products</button>
+                    <a href="{% url 'products' %}" class="btn btn-secondary btn-md mt-2">
+                        <i class="fas fa-chevron-left bg-transparent secondary-font-color"></i> Back to Products
                     </a>
                     <button id="submit-button" class="btn btn-primary btn-md mt-2" type="submit">
                         <span class="text-upper bg-transparent">Add Product</span>

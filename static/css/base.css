@@ -27,9 +27,18 @@ body {
     color: #F8FAF8;
 }
 
+.welcome-text {
+    color: #FA9E05;
+}
+
+.home-header {
+    color:#1B1A19
+}
+
 .btn-primary {
     background-color: #FA9E05;
     border-color: #FA9E05;
+    color: #1B1A19;
 }
 
 .btn-primary:hover {
